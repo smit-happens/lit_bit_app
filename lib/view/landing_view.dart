@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'serial_terminal_view.dart'; //FIXME: fix this 
 
 class LandingView extends StatelessWidget {
   @override
@@ -72,6 +73,10 @@ class LandingView extends StatelessWidget {
                   splashColor: Colors.deepOrange,
                   onPressed: () {
                     print("You pressed the serial terminal button."); //TODO: navigate to new page
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SerialTerminalView()),
+            );
                   })
             ], // Children
           ),
