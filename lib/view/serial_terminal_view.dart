@@ -14,6 +14,9 @@ class _SerialTerminalViewState extends State<SerialTerminalView> {
   // of the TextField!
   final textController = TextEditingController();
 
+  // Create the focus node. We will pass it to the TextField below.
+  final focusNode = FocusNode();
+
   @override
   void initState() {
     // TODO: implement initState
@@ -24,6 +27,7 @@ class _SerialTerminalViewState extends State<SerialTerminalView> {
   void dispose() {
     // Clean up the controller when the Widget is removed from the Widget tree
     textController.dispose();
+    focusNode.dispose();
     super.dispose();
   }
 
@@ -33,27 +37,39 @@ class _SerialTerminalViewState extends State<SerialTerminalView> {
       appBar: new AppBar(
         title: new Text("Serial Terminal"),
       ),
-      body: new SizedBox(
-        // height: 500.0,
-
-        child: new Card(
-          child: new Column(
-            children: [
-              TextField(
-                controller: textController,
-                keyboardType: TextInputType.multiline,
-                maxLines: null,
-                decoration: InputDecoration(
-                  // fillColor: Colors.black,
-                  // filled: true,
-                  border: InputBorder.none,
-                  hintText: "Type something here.",
+      body:
+          // height: 500.0,
+          new GestureDetector(
+              onTap: () {
+                print("Text field was tapped.");
+                focusNode.unfocus();
+                // focusNode.consumeKeyboardToken();
+                FocusScope.of(context).requestFocus(focusNode);
+              },
+              child: new SizedBox(
+                child: new Card(
+                  child: new Column(
+                    children: [
+                      TextField(
+                        focusNode: focusNode,
+                        controller: textController,
+                        autofocus: true,
+                        autocorrect: false,
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
+                        decoration: InputDecoration(
+                          // fillColor: Colors.black,
+                          // filled: true,
+                          border: InputBorder.none,
+                          hintText: "Type something here.",
+                        ),
+                      )
+                    ], // Children
+                  ),
                 ),
-              )
-            ], // Children
-          ),
-        ),
-      ),
+              )),
     );
   }
 }
+
+

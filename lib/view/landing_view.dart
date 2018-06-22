@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'serial_terminal_view.dart'; //FIXME: fix this 
+import 'serial_terminal_view.dart'; //FIXME: fix this
 
 class LandingView extends StatelessWidget {
   @override
@@ -63,20 +63,38 @@ class LandingView extends StatelessWidget {
                   elevation: 4.0,
                   splashColor: Colors.deepOrange,
                   onPressed: () {
-                    print("You pressed the button. Good job!");
+                    var alert = new AlertDialog(
+                      title: new Text("ALERT"),
+                      content: new Text("You pressed the button, kiddo. Good job!"),
+                      actions: <Widget>[
+                        new FlatButton(
+                          child: new Text('K'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                    showDialog(
+                      context: context,
+                      child: alert,
+                      barrierDismissible: false,
+                    );
                   }),
-                  new Divider(),
+              new Divider(),
               new RaisedButton(
                   child: const Text('Go to Serial Terminal Page'),
                   color: Theme.of(context).accentColor,
                   elevation: 4.0,
                   splashColor: Colors.deepOrange,
                   onPressed: () {
-                    print("You pressed the serial terminal button."); //TODO: navigate to new page
+                    print(
+                        "You pressed the serial terminal button."); //TODO: navigate to new page
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SerialTerminalView()),
-            );
+                      MaterialPageRoute(
+                          builder: (context) => SerialTerminalView()),
+                    );
                   })
             ], // Children
           ),
