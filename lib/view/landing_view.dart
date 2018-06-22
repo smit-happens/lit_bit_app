@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LandingScreen extends StatelessWidget {
+class LandingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Material(
