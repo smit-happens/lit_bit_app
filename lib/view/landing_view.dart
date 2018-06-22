@@ -5,9 +5,8 @@ class LandingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("AppBar Title"),
+        title: new Text("LitBit Companion App"),
       ),
-
       drawer: new Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
@@ -19,7 +18,6 @@ class LandingView extends StatelessWidget {
                 color: Colors.blue,
               ),
             ),
-
             ListTile(
               title: Text('ListTitle Title 1'),
               subtitle: Text("Subtitle"),
@@ -30,7 +28,6 @@ class LandingView extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-
             ListTile(
               title: Text('Item 2'),
               subtitle: Text("Select this item to die instantly."),
@@ -44,7 +41,6 @@ class LandingView extends StatelessWidget {
           ],
         ),
       ),
-
       body: new SizedBox(
         height: 210.0,
         child: new Card(
@@ -63,10 +59,19 @@ class LandingView extends StatelessWidget {
               new RaisedButton(
                   child: const Text('Here\'s a button!'),
                   color: Theme.of(context).accentColor,
-                  elevation: 5.0,
+                  elevation: 4.0,
                   splashColor: Colors.deepOrange,
                   onPressed: () {
                     print("You pressed the button. Good job!");
+                  }),
+                  new Divider(),
+              new RaisedButton(
+                  child: const Text('Go to Serial Terminal Page'),
+                  color: Theme.of(context).accentColor,
+                  elevation: 4.0,
+                  splashColor: Colors.deepOrange,
+                  onPressed: () {
+                    print("You pressed the serial terminal button."); //TODO: navigate to new page
                   })
             ], // Children
           ),
