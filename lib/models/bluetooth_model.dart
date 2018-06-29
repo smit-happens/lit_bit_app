@@ -1,14 +1,14 @@
-// import 'dart:async';
+import 'dart:async';
 
-// import 'package:flutter/material.dart';
-// import 'package:flutter_blue/flutter_blue.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_blue/flutter_blue.dart';
 
-// FlutterBlue flutterBlue = FlutterBlue.instance;
+FlutterBlue flutterBlue = FlutterBlue.instance;
 
-// /// Start scanning
-// var scanSubscription = flutterBlue.scan().listen((scanResult) {
-//   // do something with scan result
-// });
+/// Start scanning
+var scanSubscription = flutterBlue.scan().listen((scanResult) {
+  // do something with scan result
+});
 
 // class BluetoothSearch extends StatefulWidget {
 //   const BluetoothSearch({Key key}) : super(key: key);
@@ -90,22 +90,22 @@
 //   }
 
 
-//   // @override
-//   // Widget build(BuildContext context) {
-//   //   return new Scaffold(
-//   //     appBar: new AppBar(
-//   //       title: new Text("LitBit Companion App"),
-//   //     ),
-//   //     body: new Center(
-//   //         child: new Column(children: <Widget>[
-//   //       new Text(
-//   //         scanSubscription.toString(),
-//   //         textAlign: TextAlign.center,
-//   //         overflow: TextOverflow.ellipsis,
-//   //         style: new TextStyle(fontWeight: FontWeight.bold),
-//   //       ),
-//   //     ])),
-//   //   );
-//   // }
+  // @override
+  // Widget build(BuildContext context) {
+  //   return new Scaffold(
+  //     appBar: new AppBar(
+  //       title: new Text("LitBit Companion App"),
+  //     ),
+  //     body: new Center(
+  //         child: new Column(children: <Widget>[
+  //       new Text(
+  //         scanSubscription.toString(),
+  //         textAlign: TextAlign.center,
+  //         overflow: TextOverflow.ellipsis,
+  //         style: new TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //     ])),
+  //   );
+  // }
 
 // }

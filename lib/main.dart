@@ -6,5 +6,7 @@ import './models/bluetooth_model.dart';
 void main() {
   runApp(new MaterialApp(
     home: new LandingView(),
+    debugShowCheckedModeBanner: false
   ));
+  
 }
