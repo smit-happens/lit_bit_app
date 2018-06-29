@@ -31,7 +31,7 @@ class LandingView extends StatelessWidget {
             ),
             ListTile(
               title: Text('Item 2'),
-              subtitle: Text("Select this item to die instantly."),
+              subtitle: Text("Select this item."),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -65,10 +65,10 @@ class LandingView extends StatelessWidget {
                   onPressed: () {
                     var alert = new AlertDialog(
                       title: new Text("ALERT"),
-                      content: new Text("You pressed the button, kiddo. Good job!"),
+                      content: new Text("You pressed the button!"),
                       actions: <Widget>[
                         new FlatButton(
-                          child: new Text('K'),
+                          child: new Text('Yes I did'),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
