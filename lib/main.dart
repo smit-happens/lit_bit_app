@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './view/landing_view.dart';
+import './screens/landing_view.dart';
 import './models/bluetooth_model.dart';
 
 void main() {
