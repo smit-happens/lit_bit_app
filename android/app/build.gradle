@@ -50,7 +50,11 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation( "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+                    "com.polidea.rxandroidble2:rxandroidble:1.6.0",
+                    // 'io.reactivex:rxandroid:1.2.1',
+                    // 'io.reactivex:rxjava:1.2.3'
+    )
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

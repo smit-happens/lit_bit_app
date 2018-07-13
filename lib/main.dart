@@ -327,13 +327,24 @@ class _LitBitAppState extends State<LitBitApp> {
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
-                child: Text('Drawer Header'),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
+                child: Text(
+                  'L  I  T  B  I  T',
+                  textAlign: TextAlign.center,
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 40.0
+                  ),
                 ),
+
+                decoration: BoxDecoration(
+                color: Colors.blue,
+                ),
+
               ),
+
               ListTile(
-                title: Text('ListTitle Title 1'),
+                title: Text('Settings'),
                 subtitle: Text("Subtitle"),
                 onTap: () {
                   // Update the state of the app
@@ -409,7 +420,7 @@ class _LitBitAppState extends State<LitBitApp> {
 //                   }),
 //               new Divider(),
 //               new RaisedButton(
-//                   child: const Text('Go to Serial Terminal Page'),
+//                   child: constDefinitley but it was more like “I just learned music theory and i can’t wait to use fancy chords in everything” Text('Go to Serial Terminal Page'),
 //                   color: Theme.of(context).accentColor,
 //                   elevation: 4.0,
 //                   splashColor: Colors.deepOrange,
