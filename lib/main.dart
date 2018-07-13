@@ -5,27 +5,27 @@ import 'package:flutter/material.dart';
 
 import 'dart:async';
 import 'package:flutter_blue/flutter_blue.dart';
+import 'package:lit_bit_app/screens/serial_terminal_view.dart';
 import 'package:lit_bit_app/widgets/widgets.dart';
-
 
 void main() {
   // runApp(new MaterialApp(
   //   // home: new LandingView(),
   //   debugShowCheckedModeBanner: false
   // ));
-  runApp(new FlutterBlueApp());
+  runApp(new LitBitApp());
 }
 
-class FlutterBlueApp extends StatefulWidget {
-  FlutterBlueApp({Key key, this.title}) : super(key: key);
+class LitBitApp extends StatefulWidget {
+  LitBitApp({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _FlutterBlueAppState createState() => new _FlutterBlueAppState();
+  _LitBitAppState createState() => new _LitBitAppState();
 }
 
-class _FlutterBlueAppState extends State<FlutterBlueApp> {
+class _LitBitAppState extends State<LitBitApp> {
   FlutterBlue _flutterBlue = FlutterBlue.instance;
 
   /// Scanning
@@ -314,12 +314,47 @@ class _FlutterBlueAppState extends State<FlutterBlueApp> {
       tiles.addAll(_buildScanResultTiles());
     }
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: new Scaffold(
         appBar: new AppBar(
-          title: const Text('FlutterBlue'),
+          title: const Text('LitBit Companion App'),
           actions: _buildActionButtons(),
         ),
         floatingActionButton: _buildScanningButton(),
+        drawer: new Drawer(
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: Text('Drawer Header'),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('ListTitle Title 1'),
+                subtitle: Text("Subtitle"),
+                onTap: () {
+                  // Update the state of the app
+                  // ...
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: Text('Item 2'),
+                subtitle: Text("Select this item."),
+                onTap: () {
+                  // Update the state of the app
+                  // ...
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
         body: new Stack(
           children: <Widget>[
             (isScanning) ? _buildProgressBarTile() : new Container(),
@@ -332,3 +367,65 @@ class _FlutterBlueAppState extends State<FlutterBlueApp> {
     );
   }
 }
+//       ),
+//       body: new SizedBox(
+//         height: 210.0,
+//         child: new Card(
+//           child: new Column(
+//             children: [
+//               new ListTile(
+//                 title: new Text('ListTile Title',
+//                     style: new TextStyle(fontWeight: FontWeight.w500)),
+//                 subtitle: new Text('ListTile Subtitle'),
+//                 leading: new Icon(
+//                   Icons.bluetooth,
+//                   color: Colors.blue[500],
+//                 ),
+//               ),
+//               new Divider(),
+//               new RaisedButton(
+//                   child: const Text('Here\'s a button!'),
+//                   color: Theme.of(context).accentColor,
+//                   elevation: 4.0,
+//                   splashColor: Colors.deepOrange,
+//                   onPressed: () {
+//                     var alert = new AlertDialog(
+//                       title: new Text("ALERT"),
+//                       content: new Text("You pressed the button!"),
+//                       actions: <Widget>[
+//                         new FlatButton(
+//                           child: new Text('Yes I did'),
+//                           onPressed: () {
+//                             Navigator.of(context).pop();
+//                           },
+//                         ),
+//                       ],
+//                     );
+//                     showDialog(
+//                       context: context,
+//                       child: alert,
+//                       barrierDismissible: false,
+//                     );
+//                   }),
+//               new Divider(),
+//               new RaisedButton(
+//                   child: const Text('Go to Serial Terminal Page'),
+//                   color: Theme.of(context).accentColor,
+//                   elevation: 4.0,
+//                   splashColor: Colors.deepOrange,
+//                   onPressed: () {
+//                     print(
+//                         "You pressed the serial terminal button."); //TODO: navigate to new page
+//                     Navigator.push(
+//                       context,
+//                       MaterialPageRoute(
+//                           builder: (context) => SerialTerminalView()),
+//                     );
+//                   })
+//             ], // Children
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
