@@ -345,7 +345,7 @@ class _LitBitAppState extends State<LitBitApp> {
 
               ListTile(
                 title: Text('Settings'),
-                subtitle: Text("Subtitle"),
+                // subtitle: Text("Subtitle"),
                 onTap: () {
                   // Update the state of the app
                   // ...
@@ -354,8 +354,8 @@ class _LitBitAppState extends State<LitBitApp> {
                 },
               ),
               ListTile(
-                title: Text('Item 2'),
-                subtitle: Text("Select this item."),
+                title: Text('Profile'),
+                // subtitle: Text("Select this item."),
                 onTap: () {
                   // Update the state of the app
                   // ...

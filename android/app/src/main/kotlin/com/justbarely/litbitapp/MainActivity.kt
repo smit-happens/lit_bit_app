@@ -10,8 +10,8 @@ class MainActivity(): FlutterActivity() {
     super.onCreate(savedInstanceState)
     GeneratedPluginRegistrant.registerWith(this)
 
-    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
-      // TODO
-    }
+    // MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+    //   // TODO
+    // }
   }
 }
